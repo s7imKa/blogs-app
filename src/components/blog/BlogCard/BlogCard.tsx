@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import type { Blog } from '../../../context/blogs/type'
-import styles from './BlogCard.module.scss'
+import styles from './blogCard.module.scss'
 
 type BlogCardProps = {
     blog: Blog

@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router'
 import { useAuth } from '../../../context/auth/useAuth'
 import { Button } from '../../ui/Button/Button'
-import styles from './Header.module.scss'
+import styles from './header.module.scss'
 
 export const Header: React.FC = () => {
     const { currentUser, logout } = useAuth()
