@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { Button } from '../../components/ui/Button/Button'
 import { Input } from '../../components/ui/Input/Input'
 import { useAuth } from '../../context/auth/useAuth'
@@ -56,7 +56,7 @@ export const LoginPage: React.FC = () => {
                 </form>
             </div>
             <p className={styles.footer}>
-                Немає акаунту? <a href='/register'>Зареєструватись</a>
+                Немає акаунту? <Link to='/register'>Зареєструватись</Link>
             </p>
         </div>
     )
