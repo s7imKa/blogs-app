@@ -57,7 +57,7 @@ const App: React.FC = () => {
                         }
                     />{' '}
                     <Route
-                        path='/my-blogs:id'
+                        path='/my-blogs/:id'
                         element={
                             <PrivateRoute>
                                 <BlogDetailsPage />
