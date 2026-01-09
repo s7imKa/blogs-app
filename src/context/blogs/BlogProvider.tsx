@@ -1,6 +1,6 @@
-import React, { useCallback, useState, type FC } from 'react'
+import React, { useCallback, useEffect, useState, type FC } from 'react'
 import { v4 as newId } from 'uuid'
-import { getFromLocalStorage } from '../../utils/storage'
+import { getFromLocalStorage, saveToLocalStorage } from '../../utils/storage'
 import { useAuth } from '../auth/useAuth'
 import { BlogContext } from './BlogContext'
 import type { Blog } from './type'
@@ -9,8 +9,36 @@ interface BlogProviderProps {
     children: React.ReactNode
 }
 export const BlogProvider: FC<BlogProviderProps> = ({ children }) => {
-    const [blogs, setBlogs] = useState<Blog[]>(getFromLocalStorage('blogs') || [])
+    const [blogs, setBlogs] = useState<Blog[]>(() => {
+        const stored = getFromLocalStorage('blogs') as Blog[] | null
+        if (stored && stored.length > 0) return stored
+
+        const now = new Date().toISOString()
+        return [
+            {
+                id: newId(),
+                title: 'Вітаємо у Blogs App',
+                content:
+                    'Це прикладовий пост. Ви можете відредагувати або видалити його та створити власний.',
+                authorEmail: 'demo@blogs.app',
+                createdAt: now,
+                views: 0,
+            },
+            {
+                id: newId(),
+                title: 'Другий пост',
+                content: 'Ще один приклад посту. Натисніть, щоб переглянути деталі.',
+                authorEmail: 'demo@blogs.app',
+                createdAt: now,
+                views: 0,
+            },
+        ]
+    })
     const { currentUser } = useAuth()
+
+    useEffect(() => {
+        saveToLocalStorage('blogs', blogs)
+    }, [blogs])
 
     const createBlog = useCallback(
         (title: string, content: string) => {

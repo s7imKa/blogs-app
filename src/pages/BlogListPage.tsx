@@ -8,7 +8,6 @@ export const BlogListPage: React.FC = () => {
 
     return (
         <ProtectedLayout>
-            <h2>Всі блоги</h2>
             <BlogList blogs={blogs} />
         </ProtectedLayout>
     )
