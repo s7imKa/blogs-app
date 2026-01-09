@@ -1,5 +1,5 @@
 import React from 'react'
-import './button.module.scss'
+import styles from './Button.module.scss'
 
 
 type ButtonProps = {
@@ -17,34 +17,13 @@ export const Button: React.FC<ButtonProps> = ({
     variant = 'primary',
     disabled = false,
 }) => {
-    const getVariantStyles = () => {
-        switch (variant) {
-            case 'secondary':
-                return {
-                    backgroundColor: '#6c757d',
-                    color: 'white',
-                }
-            case 'danger':
-                return {
-                    backgroundColor: '#dc3545',
-                    color: 'white',
-                }
-            default:
-                return {
-                    backgroundColor: '#646cff',
-                    color: 'white',
-                }
-        }
-    }
 
     return (
         <button
+            className={`${styles.button} ${styles[variant]}`}
             type={type}
             onClick={onClick}
             disabled={disabled}
-            style={{
-                ...getVariantStyles(),
-            }}
         >
             {children}
         </button>

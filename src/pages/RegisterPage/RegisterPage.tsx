@@ -4,7 +4,9 @@ import { Button } from '../../components/ui/Button/Button'
 import { Input } from '../../components/ui/Input/Input'
 import { useAuth } from '../../context/auth/useAuth'
 import { validateEmail, validatePassword } from '../../utils/validators'
-import './registerPage.module.scss'
+import styles from './RegisterPage.module.scss'
+
+
 export const RegisterPage: FC = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
@@ -41,11 +43,11 @@ export const RegisterPage: FC = () => {
     }
 
     return (
-        <div>
-            <div>
-                <h2>Реєстрація</h2>
-                {error && <h2>{error}</h2>}
-                <form onSubmit={handleSubmit}>
+        <div className={styles.container}>
+            <div className={styles.formContainer}>
+                <h2 className={styles.title}>Реєстрація</h2>
+                {error && <div className={styles.error}>{error}</div>}
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <Input
                         type='email'
                         label='Email'
@@ -72,7 +74,7 @@ export const RegisterPage: FC = () => {
                     />
                     <Button type='submit'>Зареєструватись</Button>
                 </form>
-                <p>
+                <p className={styles.footer}>
                     Вже є акаунт? <a href='/login'>Увійти</a>
                 </p>
             </div>

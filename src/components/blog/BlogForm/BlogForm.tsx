@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from '../../ui/Button/Button'
 import { Input } from '../../ui/Input/Input'
-import './blogForm.module.scss'
+import styles from './BlogForm.module.scss'
 
 type BlogFormProps = {
     initialTitle?: string
@@ -27,19 +27,23 @@ export const BlogForm: React.FC<BlogFormProps> = ({
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <Input
-                label='Назва блогу'
-                value={title}
-                onChange={setTitle}
-                placeholder='Введіть назву блогу'
-                required
-            />
-            <div>
-                <label>
-                    Зміст блогу<span>*</span>
+        <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.formGroup}>
+                <Input
+                    label='Назва блогу'
+                    value={title}
+                    onChange={setTitle}
+                    placeholder='Введіть назву блогу'
+                    required
+                />
+            </div>
+            <div className={styles.formGroup}>
+                <label className={styles.label}>
+                    Зміст блогу
+                    <span className={styles.required}>*</span>
                 </label>
                 <textarea
+                    className={styles.textarea}
                     value={content}
                     onChange={e => setContent(e.target.value)}
                     placeholder='Введіть зміст блогу'
@@ -47,7 +51,9 @@ export const BlogForm: React.FC<BlogFormProps> = ({
                     rows={10}
                 />
             </div>
-            <Button type='submit'>{submitLabel}</Button>
+            <div className={styles.buttonGroup}>
+                <Button type='submit'>{submitLabel}</Button>
+            </div>
         </form>
     )
 }

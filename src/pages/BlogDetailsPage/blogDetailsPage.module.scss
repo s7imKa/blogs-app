@@ -1,0 +1,28 @@
+
+.title {
+    margin-bottom: 1.5rem;
+    color: #212529;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.content {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+}
+

@@ -4,7 +4,7 @@ import { BlogForm } from '../../components/blog/BlogForm/BlogForm'
 import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
 import { useAuth } from '../../context/auth/useAuth'
 import { useBlog } from '../../context/blogs/useBlog'
-import './blogEditPage.module.scss'
+import styles from './BlogEditPage.module.scss'
 
 export const BlogEditPage: React.FC = () => {
     const { id } = useParams<{ id: string }>()
@@ -43,8 +43,8 @@ export const BlogEditPage: React.FC = () => {
 
     return (
         <ProtectedLayout>
-            <div>
-                <h2>Редагувати блог</h2>
+            <div className='container'>
+                <h2 className={styles.title}>Редагувати блог</h2>
                 <BlogForm
                     initialTitle={blog.title}
                     initialContent={blog.content}

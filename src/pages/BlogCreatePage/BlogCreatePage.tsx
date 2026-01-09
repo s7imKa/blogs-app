@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { BlogForm } from '../../components/blog/BlogForm/BlogForm'
 import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
 import { useBlog } from '../../context/blogs/useBlog'
-import './blogCreatePage.module.scss'
+import styles from './BlogCreatePage.module.scss'
 
 export const BlogCreatePage: React.FC = () => {
     const { createBlog } = useBlog()
@@ -16,8 +16,8 @@ export const BlogCreatePage: React.FC = () => {
 
     return (
         <ProtectedLayout>
-            <div>
-                <h2>Створити новий блог</h2>
+            <div className={'container'}>
+                <h2 className={styles.title}>Створити новий блог</h2>
                 <BlogForm onSubmit={handleSubmit} submitLabel='Створити блог' />
             </div>
         </ProtectedLayout>

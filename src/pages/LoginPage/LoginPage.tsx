@@ -4,7 +4,9 @@ import { Button } from '../../components/ui/Button/Button'
 import { Input } from '../../components/ui/Input/Input'
 import { useAuth } from '../../context/auth/useAuth'
 import { validateEmail } from '../../utils/validators'
-import './loginPage.module.scss'
+import styles from './LoginPage.module.scss'
+
+
 export const LoginPage: React.FC = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -30,11 +32,11 @@ export const LoginPage: React.FC = () => {
     }
 
     return (
-        <div>
-            <div>
-                <h2>Вхід</h2>
-                {error && <div>{error}</div>}
-                <form onSubmit={handleSubmit}>
+        <div className={styles.container}>
+            <div className={styles.formContainer}>
+                <h2 className={styles.title}>Вхід</h2>
+                {error && <div className={styles.error}>{error}</div>}
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <Input
                         type='email'
                         label='Email'
@@ -53,10 +55,10 @@ export const LoginPage: React.FC = () => {
                     />
                     <Button type='submit'>Увійти</Button>
                 </form>
-                <p>
-                    Немає акаунту? <a href='/register'>Зареєструватись</a>
-                </p>
             </div>
+            <p className={styles.footer}>
+                Немає акаунту? <a href='/register'>Зареєструватись</a>
+            </p>
         </div>
     )
 }

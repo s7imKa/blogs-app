@@ -7,9 +7,9 @@ type ProtectedLayoutProps = {
 
 export const ProtectedLayout: React.FC<ProtectedLayoutProps> = ({ children }) => {
     return (
-        <div>
+        <>
             <Header />
             <main>{children}</main>
-        </div>
+        </>
     )
 }

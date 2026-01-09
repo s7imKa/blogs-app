@@ -32,8 +32,11 @@ export const Header: React.FC = () => {
             <div className={styles.userSection}>
                 {currentUser && (
                     <>
-                        <span className={styles.userEmail}>Привіт, {currentUser.email}</span>
+                        <span className={styles.userEmail}>{currentUser.email}</span>
                         <div className={styles.buttonGroup}>
+                            <Button onClick={handleGoHome} variant='secondary'>
+                                Головна сторінка
+                            </Button>
                             <Button onClick={handleCreateBlog} variant='secondary'>
                                 Створити блог
                             </Button>

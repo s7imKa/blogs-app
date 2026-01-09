@@ -1,6 +1,5 @@
 import React from 'react'
-import './input.module.scss'
-
+import styles from './Input.module.scss'
 
 type InputProps = {
     type?: string
@@ -20,14 +19,15 @@ export const Input: React.FC<InputProps> = ({
     required = false,
 }) => {
     return (
-        <div>
+        <div className={styles.inputGroup}>
             {label && (
-                <label>
+                <label className={styles.label}>
                     {label}
-                    {required && <span>*</span>}
+                    {required && <span className={styles.required}>*</span>}
                 </label>
             )}
             <input
+                className={styles.input}
                 type={type}
                 placeholder={placeholder}
                 value={value}

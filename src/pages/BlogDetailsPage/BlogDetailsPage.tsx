@@ -4,7 +4,7 @@ import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
 import { Button } from '../../components/ui/Button/Button'
 import { useAuth } from '../../context/auth/useAuth'
 import { useBlog } from '../../context/blogs/useBlog'
-import './blogDetailsPage.module.scss'
+import styles from './BlogDetailsPage.module.scss'
 
 export const BlogDetailsPage: React.FC = () => {
     const { id } = useParams<{ id: string }>()
@@ -49,15 +49,15 @@ export const BlogDetailsPage: React.FC = () => {
     const isAuthor = currentUser?.email === blog.authorEmail
     return (
         <ProtectedLayout>
-            <div>
-                <h1>{blog.title}</h1>
-                <div>
+            <div className={'container'}>
+                <h1 className={styles.title}>{blog.title}</h1>
+                <div className={styles.meta}>
                     <div>Автор: {blog.authorEmail}</div>
                     <div>Переглядів: {blog.views}</div>
                     <div>Створено: {new Date(blog.createdAt).toLocaleDateString('uk-UA')}</div>
                 </div>
-                <div>{blog.content}</div>
-                <div>
+                <div className={styles.content}>{blog.content}</div>
+                <div className={styles.actions}>
                     <Button onClick={() => navigate('/blogs')} variant='secondary'>
                         Назад до списку
                     </Button>

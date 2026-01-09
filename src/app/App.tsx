@@ -8,78 +8,80 @@ import { LoginPage } from '../pages/LoginPage/LoginPage'
 import { RegisterPage } from '../pages/RegisterPage/RegisterPage'
 import { PrivateRoute } from '../routes/PrivateRoutes'
 import { PublicRoute } from '../routes/PublicRoutes'
-import './app.module.scss'
+import styles from './app.module.scss'
 
 const App: React.FC = () => {
     return (
         <Router>
-            <Routes>
-                <Route path='/' element={<Navigate to='/login' replace />} />
-                <Route
-                    path='/login'
-                    element={
-                        <PublicRoute>
-                            <LoginPage />
-                        </PublicRoute>
-                    }
-                />
-                <Route
-                    path='/register'
-                    element={
-                        <PublicRoute>
-                            <RegisterPage />
-                        </PublicRoute>
-                    }
-                />
-                <Route
-                    path='/blogs'
-                    element={
-                        <PrivateRoute>
-                            <BlogListPage />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path='/blogs/:id'
-                    element={
-                        <PrivateRoute>
-                            <BlogDetailsPage />
-                        </PrivateRoute>
-                    }
-                />{' '}
-                <Route
-                    path='/my-blogs'
-                    element={
-                        <PrivateRoute>
-                            <BlogListPage isMyBlogsPage={true} />
-                        </PrivateRoute>
-                    }
-                />{' '}
-                <Route
-                    path='/my-blogs:id'
-                    element={
-                        <PrivateRoute>
-                            <BlogDetailsPage />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path='/create'
-                    element={
-                        <PrivateRoute>
-                            <BlogCreatePage />
-                        </PrivateRoute>
-                    }
-                />
-                <Route
-                    path='/edit/:id'
-                    element={
-                        <PrivateRoute>
-                            <BlogEditPage />
-                        </PrivateRoute>
-                    }
-                />
-            </Routes>
+            <div className={styles.app}>
+                <Routes>
+                    <Route path='/' element={<Navigate to='/login' replace />} />
+                    <Route
+                        path='/login'
+                        element={
+                            <PublicRoute>
+                                <LoginPage />
+                            </PublicRoute>
+                        }
+                    />
+                    <Route
+                        path='/register'
+                        element={
+                            <PublicRoute>
+                                <RegisterPage />
+                            </PublicRoute>
+                        }
+                    />
+                    <Route
+                        path='/blogs'
+                        element={
+                            <PrivateRoute>
+                                <BlogListPage />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path='/blogs/:id'
+                        element={
+                            <PrivateRoute>
+                                <BlogDetailsPage />
+                            </PrivateRoute>
+                        }
+                    />{' '}
+                    <Route
+                        path='/my-blogs'
+                        element={
+                            <PrivateRoute>
+                                <BlogListPage isMyBlogsPage={true} />
+                            </PrivateRoute>
+                        }
+                    />{' '}
+                    <Route
+                        path='/my-blogs:id'
+                        element={
+                            <PrivateRoute>
+                                <BlogDetailsPage />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path='/create'
+                        element={
+                            <PrivateRoute>
+                                <BlogCreatePage />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path='/edit/:id'
+                        element={
+                            <PrivateRoute>
+                                <BlogEditPage />
+                            </PrivateRoute>
+                        }
+                    />
+                </Routes>
+            </div>
         </Router>
     )
 }
