@@ -1,74 +1,54 @@
-# React + TypeScript + Vite
+# Blogs App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простий веб-додаток для створення, редагування та перегляду блогів з аутентифікацією користувачів.
 
-Currently, two official plugins are available:
+## Можливості
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   📝 **Створення блогів** - напишіть свій перший блог
+-   ✏️ **Редагування** - змініть свої пости
+-   🗑️ **Видалення** - видаліть непотрібні блоги
+-   👤 **Аутентифікація** - реєстрація та вхід
+-   📊 **Лічильник переглядів** - відстежуйте популярність
+-   📱 **Адаптивний дизайн** - працює на всіх пристроях
 
-## React Compiler
+## Технології
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **React** - фронтенд фреймворк
+-   **React Router** - навігація
+-   **TypeScript** - типізація
+-   **SCSS** - стилізація
+-   **LocalStorage** - збереження даних
 
-## Expanding the ESLint configuration
+## Встановлення
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Структура проекту
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
-# blogs-app
+src/
+├── app/              # Головний компонент App
+├── components/       # Компоненти UI та Layout
+├── context/          # Auth та Blog контексти
+├── pages/            # Сторінки додатку
+├── routes/           # Приватні та публічні маршрути
+├── styles/           # Глобальні стилі
+└── utils/            # Функції допоміжні
+```
+
+## Маршрути
+
+-   `/login` - вхід в систему
+-   `/register` - реєстрація
+-   `/blogs` - список всіх блогів
+-   `/blogs/:id` - деталі блогу
+-   `/my-blogs` - мої блоги
+-   `/create` - створити блог
+-   `/edit/:id` - редагувати блог
+
+## Дані
+
+Всі дані зберігаються в **localStorage** браузера.
