@@ -33,6 +33,7 @@ export const Header: React.FC = () => {
                 {currentUser && (
                     <>
                         <span className={styles.userEmail}>{currentUser.email}</span>
+
                         <div className={styles.buttonGroup}>
                             <Button onClick={handleGoHome} variant='secondary'>
                                 Головна сторінка

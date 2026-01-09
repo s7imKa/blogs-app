@@ -16,7 +16,7 @@ export const BlogCreatePage: React.FC = () => {
 
     return (
         <ProtectedLayout>
-            <div className={'container'}>
+            <div className={styles.container}>
                 <h2 className={styles.title}>Створити новий блог</h2>
                 <BlogForm onSubmit={handleSubmit} submitLabel='Створити блог' />
             </div>

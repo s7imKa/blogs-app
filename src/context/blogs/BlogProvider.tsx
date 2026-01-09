@@ -31,6 +31,22 @@ export const BlogProvider: FC<BlogProviderProps> = ({ children }) => {
                 createdAt: now,
                 views: 0,
             },
+            {
+                id: newId(),
+                title: 'Другий пост',
+                content: 'Ще один приклад посту. Натисніть, щоб переглянути деталі.',
+                authorEmail: 'demo@blogs.app',
+                createdAt: now,
+                views: 0,
+            },
+            {
+                id: newId(),
+                title: 'Другий пост',
+                content: 'Ще один приклад посту. Натисніть, щоб переглянути деталі.',
+                authorEmail: 'demo@blogs.app',
+                createdAt: now,
+                views: 0,
+            },
         ]
     })
     const { currentUser } = useAuth()

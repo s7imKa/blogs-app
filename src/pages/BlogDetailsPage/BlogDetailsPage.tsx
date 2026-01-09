@@ -49,7 +49,7 @@ export const BlogDetailsPage: React.FC = () => {
     const isAuthor = currentUser?.email === blog.authorEmail
     return (
         <ProtectedLayout>
-            <div className={'container'}>
+            <div className={styles.container}>
                 <h1 className={styles.title}>{blog.title}</h1>
                 <div className={styles.meta}>
                     <div>Автор: {blog.authorEmail}</div>
