@@ -75,10 +75,10 @@ export const BlogList: React.FC<BlogListProps> = ({ blogs }) => {
                         minWidth: '200px',
                     }}
                 />
-                <Button onClick={sortedViewAsc}>Більше Переглядів</Button>
-                <Button onClick={sortedViewDesc}>Менше Переглядів</Button>
-                <Button onClick={sortedDateAsc}>Старіші</Button>
+                <Button onClick={sortedViewDesc}>Більше Переглядів</Button>
+                <Button onClick={sortedViewAsc}>Менше Переглядів</Button>
                 <Button onClick={sortedDateDesc}>Новіші</Button>
+                <Button onClick={sortedDateAsc}>Старіші</Button>
             </div>
             <div className={style.container}>
                 {filteredBlogs.length > 0 ? (
