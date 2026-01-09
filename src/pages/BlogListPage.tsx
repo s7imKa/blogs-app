@@ -1,16 +1,24 @@
 import React from 'react'
-import { ProtectedLayout } from '../components/layout/ProtectedLayout'
 import { BlogList } from '../components/blog/Bloglist'
+import { ProtectedLayout } from '../components/layout/ProtectedLayout'
+import { useAuth } from '../context/auth/useAuth'
 import { useBlog } from '../context/blogs/useBlog'
 
-export const BlogListPage: React.FC = () => {
+interface BlogListPageProps {
+    isMyBlogsPage?: boolean
+}
+
+export const BlogListPage: React.FC<BlogListPageProps> = ({ isMyBlogsPage = false }) => {
     const { blogs } = useBlog()
+    const { currentUser } = useAuth()
+
+    const filteredBlogs = isMyBlogsPage
+        ? blogs.filter(blog => blog.authorEmail === currentUser?.email)
+        : blogs
 
     return (
         <ProtectedLayout>
-            <BlogList blogs={blogs} />
+            <BlogList blogs={filteredBlogs} />
         </ProtectedLayout>
     )
 }
-
-

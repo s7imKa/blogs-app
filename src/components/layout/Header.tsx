@@ -15,6 +15,10 @@ export const Header: React.FC = () => {
     const handleCreateBlog = () => {
         navigate('/create')
     }
+    const handleMyBlog = () => {
+        navigate('/my-blogs')
+    }
+
 
     const handleGoHome = () => {
         navigate('/blogs')
@@ -30,6 +34,10 @@ export const Header: React.FC = () => {
                         <Button onClick={handleCreateBlog} variant='secondary'>
                             Створити блог
                         </Button>
+                        <Button onClick={handleMyBlog} variant='secondary'>
+                            Мої блоги
+                        </Button>
+
                         <Button onClick={handleLogout} variant='danger'>
                             Вийти
                         </Button>
