@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
-import { Button } from '../components/ui/Button'
-import { Input } from '../components/ui/Input'
-import { validateEmail } from '../utils/validators'
-import { useAuth } from '../context/auth/useAuth'
-
+import { Button } from '../../components/ui/Button/Button'
+import { Input } from '../../components/ui/Input/Input'
+import { useAuth } from '../../context/auth/useAuth'
+import { validateEmail } from '../../utils/validators'
+import './loginPage.module.scss'
 export const LoginPage: React.FC = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -60,4 +60,3 @@ export const LoginPage: React.FC = () => {
         </div>
     )
 }
-

@@ -1,13 +1,14 @@
 import React from 'react'
 import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router'
-import { BlogCreatePage } from '../pages/BlogCreatePage'
-import { BlogDetailsPage } from '../pages/BlogDetailsPage'
-import { BlogEditPage } from '../pages/BlogEditPage'
-import { BlogListPage } from '../pages/BlogListPage'
-import { LoginPage } from '../pages/LoginPage'
-import { RegisterPage } from '../pages/RegisterPage'
+import { BlogCreatePage } from '../pages/BlogCreatePage/BlogCreatePage'
+import { BlogDetailsPage } from '../pages/BlogDetailsPage/BlogDetailsPage'
+import { BlogEditPage } from '../pages/BlogEditPage/BlogEditPage'
+import { BlogListPage } from '../pages/BlogListPage/BlogListPage'
+import { LoginPage } from '../pages/LoginPage/LoginPage'
+import { RegisterPage } from '../pages/RegisterPage/RegisterPage'
 import { PrivateRoute } from '../routes/PrivateRoutes'
 import { PublicRoute } from '../routes/PublicRoutes'
+import './app.module.scss'
 
 const App: React.FC = () => {
     return (

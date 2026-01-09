@@ -1,10 +1,10 @@
 import { useState, type FC } from 'react'
-import { Button } from '../components/ui/Button'
-import { Input } from '../components/ui/Input'
-import { useAuth } from '../context/auth/useAuth'
 import { useNavigate } from 'react-router'
-import { validateEmail, validatePassword } from '../utils/validators'
-
+import { Button } from '../../components/ui/Button/Button'
+import { Input } from '../../components/ui/Input/Input'
+import { useAuth } from '../../context/auth/useAuth'
+import { validateEmail, validatePassword } from '../../utils/validators'
+import './registerPage.module.scss'
 export const RegisterPage: FC = () => {
     const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')

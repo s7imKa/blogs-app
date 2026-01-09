@@ -1,4 +1,6 @@
 import React from 'react'
+import './input.module.scss'
+
 
 type InputProps = {
     type?: string

@@ -1,9 +1,10 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router'
-import { BlogForm } from '../components/blog/BlogForm'
-import { ProtectedLayout } from '../components/layout/ProtectedLayout'
-import { useBlog } from '../context/blogs/useBlog'
-import { useAuth } from '../context/auth/useAuth'
+import { BlogForm } from '../../components/blog/BlogForm/BlogForm'
+import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
+import { useAuth } from '../../context/auth/useAuth'
+import { useBlog } from '../../context/blogs/useBlog'
+import './blogEditPage.module.scss'
 
 export const BlogEditPage: React.FC = () => {
     const { id } = useParams<{ id: string }>()
@@ -54,4 +55,3 @@ export const BlogEditPage: React.FC = () => {
         </ProtectedLayout>
     )
 }
-

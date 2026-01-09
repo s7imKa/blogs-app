@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
-import { ProtectedLayout } from '../components/layout/ProtectedLayout'
-import { Button } from '../components/ui/Button'
-import { useBlog } from '../context/blogs/useBlog'
-import { useAuth } from '../context/auth/useAuth'
+import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
+import { Button } from '../../components/ui/Button/Button'
+import { useAuth } from '../../context/auth/useAuth'
+import { useBlog } from '../../context/blogs/useBlog'
+import './blogDetailsPage.module.scss'
 
 export const BlogDetailsPage: React.FC = () => {
     const { id } = useParams<{ id: string }>()
@@ -14,10 +15,13 @@ export const BlogDetailsPage: React.FC = () => {
     const blog = blogs.find(b => b.id === id)
 
     useEffect(() => {
-        if (id) {
-            incrementViews(id)
-        }
-        // increment only once per id change
+        if (!id) return
+
+        const key = `viewed-blog-${id}`
+        if (sessionStorage.getItem(key)) return
+
+        incrementViews(id)
+        sessionStorage.setItem(key, 'true')
     }, [id, incrementViews])
 
     if (!blog) {
@@ -43,7 +47,6 @@ export const BlogDetailsPage: React.FC = () => {
     }
 
     const isAuthor = currentUser?.email === blog.authorEmail
-
     return (
         <ProtectedLayout>
             <div>
@@ -71,5 +74,3 @@ export const BlogDetailsPage: React.FC = () => {
         </ProtectedLayout>
     )
 }
-
-

@@ -1,6 +1,6 @@
 import React from 'react'
-import type { Blog } from '../../context/blogs/type'
-import { BlogCard } from './BlogCard'
+import type { Blog } from '../../../context/blogs/type'
+import { BlogCard } from '../BlogCard/BlogCard'
 
 type BlogListProps = {
     blogs: Blog[]

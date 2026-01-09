@@ -1,8 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
-import { ProtectedLayout } from '../components/layout/ProtectedLayout'
-import { useBlog } from '../context/blogs/useBlog'
-import { BlogForm } from '../components/blog/BlogForm'
+import { BlogForm } from '../../components/blog/BlogForm/BlogForm'
+import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
+import { useBlog } from '../../context/blogs/useBlog'
+import './blogCreatePage.module.scss'
 
 export const BlogCreatePage: React.FC = () => {
     const { createBlog } = useBlog()
@@ -22,5 +23,3 @@ export const BlogCreatePage: React.FC = () => {
         </ProtectedLayout>
     )
 }
-
-

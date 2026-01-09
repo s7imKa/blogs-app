@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Button } from '../ui/Button'
-import { Input } from '../ui/Input'
+import { Button } from '../../ui/Button/Button'
+import { Input } from '../../ui/Input/Input'
+import './blogForm.module.scss'
 
 type BlogFormProps = {
     initialTitle?: string
