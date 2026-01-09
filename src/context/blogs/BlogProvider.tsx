@@ -18,8 +18,7 @@ export const BlogProvider: FC<BlogProviderProps> = ({ children }) => {
             {
                 id: newId(),
                 title: 'Вітаємо у Blogs App',
-                content:
-                    'Це прикладовий пост. Ви можете відредагувати або видалити його та створити власний.',
+                content: 'Це прикладовий пост. Натисніть, щоб переглянути деталі.',
                 authorEmail: 'demo@blogs.app',
                 createdAt: now,
                 views: 0,
