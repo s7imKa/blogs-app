@@ -4,8 +4,7 @@ import { Button } from '../../components/ui/Button/Button'
 import { Input } from '../../components/ui/Input/Input'
 import { useAuth } from '../../context/auth/useAuth'
 import { validateEmail } from '../../utils/validators'
-import styles from './LoginPage.module.scss'
-
+import styles from './loginPage.module.scss'
 
 export const LoginPage: React.FC = () => {
     const [email, setEmail] = useState('')

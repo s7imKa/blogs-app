@@ -4,8 +4,7 @@ import { Button } from '../../components/ui/Button/Button'
 import { Input } from '../../components/ui/Input/Input'
 import { useAuth } from '../../context/auth/useAuth'
 import { validateEmail, validatePassword } from '../../utils/validators'
-import styles from './RegisterPage.module.scss'
-
+import styles from './registerPage.module.scss'
 
 export const RegisterPage: FC = () => {
     const [email, setEmail] = useState<string>('')

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router'
 import { BlogForm } from '../../components/blog/BlogForm/BlogForm'
 import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
 import { useBlog } from '../../context/blogs/useBlog'
-import styles from './BlogCreatePage.module.scss'
+import styles from './blogCreatePage.module.scss'
 
 export const BlogCreatePage: React.FC = () => {
     const { createBlog } = useBlog()

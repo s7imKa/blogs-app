@@ -4,7 +4,7 @@ import { ProtectedLayout } from '../../components/layout/ProtectedLayout'
 import { Button } from '../../components/ui/Button/Button'
 import { useAuth } from '../../context/auth/useAuth'
 import { useBlog } from '../../context/blogs/useBlog'
-import styles from './BlogDetailsPage.module.scss'
+import styles from './blogDetailsPage.module.scss'
 
 export const BlogDetailsPage: React.FC = () => {
     const { id } = useParams<{ id: string }>()
